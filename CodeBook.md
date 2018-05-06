@@ -26,3 +26,4 @@ The `run_analysis.R` script does the following:
 * Replaces the data frames activity IDs with descriptive activity names.
 * Labels the data set with appropriate, descriptive variable names.
 * Creates a second, independent tidy data set with and summarizes the average of each variable for each activity and each subject.
+* Writes the tidy data set to file `tidy_data.txt`.
