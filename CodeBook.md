@@ -1,6 +1,6 @@
 # Code Book
 
-Coursera: Cleaning and Getting Data, Course Project.
+Coursera: Getting and Cleaning Data, Course Project.
 
 ## Input Data
 
