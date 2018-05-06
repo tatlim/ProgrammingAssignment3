@@ -1,30 +1,28 @@
----
-title: "CodeBook"
-output: github_document
----
+# Code Book
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+Coursera: Cleaning and Getting Data, Course Project.
 
-## GitHub Documents
+## Input Data
 
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+The `run_analysis.R` script downloads processes the zipped UCI HAR dataset file.
 
-## Including Code
+## Output Data
 
-You can include R code in the document as follows:
+The `tidy_data.txt` file contains a data set with 180 rows and 81 columns with the following variables:
 
-```{r cars}
-summary(cars)
-```
+* subject - id of the voluntering person.
+* activity - a physical performance done by the volunteer (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).
+* 79 columns of mean values of accelerometer and gyroscope measurements (further details can be found in original UCI HAR dataset).
 
-## Including Plots
+## Data Transformations
 
-You can also embed plots, for example:
+The `run_analysis.R` script does the following:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+* Downloads the UCI HAR zip file
+* Unzips the UCI HAR dataset
+* Binds the three columns of both the _train_ and _test_ data set to a data frame.
+* Merges the _train_ and _test_ data frame into a single one _all.data_.
+* Extracts the measurements on the mean and standard deviation for each measurement.
+* Replaces the data frames activity IDs with descriptive activity names.
+* Labels the data set with appropriate, descriptive variable names.
+* Creates a second, independent tidy data set with and summarizes the average of each variable for each activity and each subject.
